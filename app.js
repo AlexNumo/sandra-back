@@ -7,6 +7,7 @@ const traineeRouter = require('./routes/api/trainee');
 const coachRouter = require('./routes/api/coach');
 const clientRouter = require('./routes/api/client');
 const kindTraineeRouter = require('./routes/api/kind-trainee');
+const tgBotRouter = require('./routes/api/tgBot');
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use('/trainee', traineeRouter);
 app.use('/coach', coachRouter);
 app.use('/client', clientRouter);
 app.use('/kindtrainee', kindTraineeRouter);
+app.use('/tgbot', tgBotRouter);
 
 
 
