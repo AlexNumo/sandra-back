@@ -12,7 +12,7 @@ const listDataUsers = async (req, res, next) => {
 const addDataUsers = async (req, res, next) => {
     try {
         const data = await dataTGBot.addData(req.body);
-        res.status(201).json(data);
+        return res.status(201).json(data);
     } catch (e) {
         if(e.message.includes('duplicate')){
             e.status = 400
