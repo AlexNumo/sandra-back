@@ -12,7 +12,7 @@ const addData = async (req, res) => {
         await TgBotUser.findByIdAndDelete(find._id);
     }
     const newData = new TgBotUser({id, day, time, kind_trainee, name});
-    await newData.save();
+    return await newData.save();
 }
 const findTrainee = async (req, res) => {
     const { id } = req;
