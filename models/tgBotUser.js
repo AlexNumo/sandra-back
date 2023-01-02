@@ -6,26 +6,28 @@ const schema = new Schema(
             type: String,
             unique: false
         },
-        day: {
-            type: String,
-            unique: false
-        },
-        time: {
-            type: String,
-            unique: false
-        },
-        kind_trainee: {
-            type: String,
-            unique: false
-        },
-        name: {
-            type: String,
-            unique: false
-        },
-        date: {
-            type: Date,
-            default: Date.now()
-        },
+        info: [{
+            day: {
+                type: String,
+                unique: false
+            },
+            time: {
+                type: String,
+                unique: false
+            },
+            kind_trainee: {
+                type: String,
+                unique: false
+            },
+            name: {
+                type: String,
+                unique: false
+            },
+            date: {
+                type: Date,
+                unique: false
+                },
+        }]
     }
 );
 

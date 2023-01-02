@@ -6,13 +6,16 @@ const listData = async () => {
 
 const addData = async (req, res) => {
     // eslint-disable-next-line camelcase
-    const { id, day, time, kind_trainee, name} = req;
+    const { id, info} = req;
     const find = await TgBotUser.findOne({ id });
     if (find) {
-        await TgBotUser.findByIdAndDelete(find._id);
+       return await TgBotUser.findOneAndUpdate(
+        { id },
+        { $push: { info: info } },
+    );
     }
-    const newData = new TgBotUser({id, day, time, kind_trainee, name});
-    return await newData.save();
+    const newTGUser = new TgBotUser({id, info});
+    return await newTGUser.save();
 }
 const findTrainee = async (req, res) => {
     const { id } = req;
