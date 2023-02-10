@@ -23,6 +23,10 @@ const schema = new Schema(
                 type: String,
                 unique: false
             },
+            instaNickName: {
+                type: String,
+                unique: false
+            },
             date: {
                 type: Date,
                 unique: false
