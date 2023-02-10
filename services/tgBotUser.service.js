@@ -9,7 +9,6 @@ const addData = async (req, res) => {
     const { id, info } = req;
     const find = await TgBotUser.findOne({ id });
     if (find) {
-        console.log(req);
        return await TgBotUser.findOneAndUpdate(
         { id },
         { $push: { info: info } },
