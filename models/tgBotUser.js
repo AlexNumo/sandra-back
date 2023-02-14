@@ -33,6 +33,7 @@ const schema = new Schema(
             },
             coach: {
                 type: String,
+                default: "empty",
                 unique: false
             },
             visitTrainee: {
