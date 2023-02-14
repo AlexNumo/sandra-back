@@ -30,7 +30,16 @@ const schema = new Schema(
             date: {
                 type: Date,
                 unique: false
-                },
+            },
+            coach: {
+                type: String,
+                unique: false
+            },
+            visitTrainee: {
+                type: Boolean,
+                default: false,
+                unique: false
+            },       
         }]
     }
 );
