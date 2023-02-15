@@ -21,10 +21,11 @@ const addDataUsers = async (req, res, next) => {
     }
 }
 
-const findTraineeUsers = async (req, res, next) => {
+const changeVisitTraineeOfUsers = async (req, res, next) => {
     try {
-        const data = await dataTGBot.findTrainee(req.body);
-        res.status(201).json(data);
+        const data = await dataTGBot.changeVisitTrainee(req.body);
+        // console.log(res.json(res1).status(201));
+        return res.status(201).json(data);
     } catch (e) {
         if(e.message.includes('duplicate')){
             e.status = 400
@@ -34,5 +35,5 @@ const findTraineeUsers = async (req, res, next) => {
 }
 
 module.exports = {
-    listDataUsers, addDataUsers, findTraineeUsers
+    listDataUsers, addDataUsers, changeVisitTraineeOfUsers
 }
